@@ -9,14 +9,15 @@ function createWindow() {
   let win = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: path.join(__dirname, '..', '..', 'assets', 'AppIcon.icns'),
+    // icon: path.join(__dirname, '..', '..', 'assets', 'AppIcon.icns'),
+    icon: path.join(__dirname, '..', '..', 'assets', 'AppIcon256.png'),
+    title: 'Princess',
     webPreferences: {
       nodeIntegration: true,
     },
   });
 
   win.loadURL(PRINCESS_EXPO_APP_URL);
-  console.log(path.join(__dirname, '..', '..', 'assets', 'AppIcon.icns'));
 }
 
 app.on('ready', createWindow);
