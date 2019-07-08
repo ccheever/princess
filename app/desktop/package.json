@@ -1,0 +1,15 @@
+{
+  "name": "princess-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/ccheever/princess",
+  "author": "Charlie Cheever <ccheever@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "cp ../../assets/AppIcon.icns node_modules/electron/dist/Electron.app/Contents/Resources/electron.icns"
+  },
+  "devDependencies": {
+    "electron": "^5.0.6"
+  }
+}

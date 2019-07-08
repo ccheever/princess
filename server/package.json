@@ -1,0 +1,12 @@
+{
+  "name": "princess-server",
+  "version": "1.0.0",
+  "description": "Server for Princess",
+  "main": "index.js",
+  "repository": "https://github.com/ccheever/princess",
+  "author": "Charlie Cheever <ccheever@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "project-repl": "^1.5.0"
+  }
+}

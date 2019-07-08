@@ -1,0 +1,9 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Princess client application",
+  "main": "index.js",
+  "repository": "https://github.com/ccheever/princess",
+  "author": "Charlie Cheever <ccheever@gmail.com>",
+  "license": "MIT"
+}
