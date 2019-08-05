@@ -7,9 +7,15 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "postinstall": "cp ../../assets/AppIcon.icns node_modules/electron/dist/Electron.app/Contents/Resources/electron.icns && echo 'Replaced Electron icons with custom Princess icons for macOS' || echo 'Copying icons failed (probably because this isnt macOS)'"
+    "postinstall": "cp ../../assets/AppIcon.icns node_modules/electron/dist/Electron.app/Contents/Resources/electron.icns && echo 'Replaced Electron icons with custom Princess icons for macOS' || echo 'Copying icons failed (probably because this isnt macOS)'; npx electron-rebuild",
+    "electron-rebuild": "npx electron-rebuild"
   },
   "devDependencies": {
-    "electron": "^5.0.6"
+    "electron": "^5.0.6",
+    "electron-rebuild": "^1.8.5",
+    "project-repl": "^1.5.0"
+  },
+  "dependencies": {
+    "node-window-manager": "^1.0.3"
   }
 }

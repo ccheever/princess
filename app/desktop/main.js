@@ -1,3 +1,4 @@
+let child_process = require('child_process');
 let path = require('path');
 
 let { app, BrowserWindow } = require('electron');
@@ -18,6 +19,16 @@ function createWindow() {
   });
 
   win.loadURL(PRINCESS_EXPO_APP_URL);
+
+  spawnLove$();
+
+}
+
+async function spawnLove$() {
+  child_process.spawn('love', {
+    shell: true,
+    stdio: 'ignore',
+  });
 }
 
 app.on('ready', createWindow);
