@@ -6,7 +6,16 @@
   "repository": "https://github.com/ccheever/princess",
   "author": "Charlie Cheever <ccheever@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon ."
+  },
   "devDependencies": {
+    "nodemon": "^1.19.1",
     "project-repl": "^1.5.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.9.2",
+    "express": "^4.17.1",
+    "graphql": "^14.5.4"
   }
 }
