@@ -76,9 +76,22 @@ server.applyMiddleware({ app });
 
 let port = process.env.PORT || 4000;
 
-// This `listen` method launches a web-server.  Existing apps
-// can utilize middleware options, which we'll discuss later.
-app.listen({ port }, () => {
-  console.log(`👸 Princess Server ready at http://localhost:${port}`);
-  console.log(`🗂️  GraphQL Server ready at http://localhost:${port}${server.graphqlPath}`);
-});
+async function mainAsync() {
+  // This `listen` method launches a web-server.  Existing apps
+  // can utilize middleware options, which we'll discuss later.
+  app.listen({ port }, () => {
+    console.log(`👸 Princess Server ready at http://localhost:${port}`);
+    console.log(`🗂️  GraphQL Server ready at http://localhost:${port}${server.graphqlPath}`);
+  });
+}
+
+if (require.main === module) {
+  mainAsync();
+}
+
+module.exports = {
+  server,
+  app,
+  port,
+  mainAsync,
+};
