@@ -62,7 +62,7 @@ app.get('/', async (req, res) => {
   <body>
   <strong style="color: #F808FA;">👸 Princess </strong>
   
-  <p>Thank you Mario!</p>
+  <p>Thank you so and so!</p>
 
   <p>But our princess is in another castle!</p>
   <hr style="border: 1px solid #20FFFF;" />
