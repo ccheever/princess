@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+export PGHOST=`node -e "console.log(require('./private-secretary').postgres.host)"`
+export PGUSER=`node -e "console.log(require('./private-secretary').postgres.user)"`
+export PGDATABASE=`node -e "console.log(require('./private-secretary').postgres.database)"`
+export PGPASSWORD=`node -e "console.log(require('./private-secretary').postgres.password)"`
+
+echo "// Princess Database"
+echo 'Type \dt to list tables, \d+ <table-name> to describe a table'
+pgcli  --host=$PGHOST --user=$PGUSER --dbname=$PGDATABASE $*
+
+# if [[ ! -z "$NODE_ENV" ]] && [[ $NODE_ENV == "local" ]]
+# then
+# pgcli  --host=$PGHOST --user=$PGUSER --dbname=$PGDATABASE $*
+# else
+
+# #export PGPASSWORD="$(aws rds generate-db-auth-token --hostname $PGHOST --port 5432 --region us-east-1 --username $PGUSER )"
+# #echo $PGPASSWORD
+# #psql "host=$PGHOST port=5432 sslmode=verify-full sslrootcert=../ghost-secret/rds-combined-ca-bundle.pem dbname=$PGDATABASE user=$PGUSER"
+# echo $PGHOST
+# echo $PGUSER
+# echo $PGDATABASE
+# echo $PGPASSWORD
+# psql "host=$PGHOST port=5432 sslmode=verify-full sslrootcert=../ghost-secret/rds-combined-ca-bundle.pem dbname=$PGDATABASE user=$PGUSER"
+# fi
