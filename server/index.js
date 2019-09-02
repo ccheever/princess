@@ -44,7 +44,19 @@ let resolvers = {
 // In the most basic sense, the ApolloServer can be started
 // by passing type definitions (typeDefs) and the resolvers
 // responsible for fetching the data for those types.
-let server = new ApolloServer({ typeDefs, resolvers });
+let server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  formatError: (error) => {
+    console.log(error);
+    return error;
+  },
+  formatResponse: (response) => {
+    console.log("Sending response at " + new Date());
+    // console.log(response);
+    return response;
+  },
+});
 let app = express();
 
 app.get('/', async (req, res) => {
