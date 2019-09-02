@@ -52,9 +52,20 @@ let server = new ApolloServer({
     return error;
   },
   formatResponse: (response) => {
-    console.log("Sending response at " + new Date());
+    console.log('Sending response at ' + new Date());
     // console.log(response);
     return response;
+  },
+  context: ({ req }) => {
+    let clientId = req.get('Princess-Client') || null;
+    let userId = req.get('Princess-User') || null;
+    console.log("Headers", JSON.stringify(req.headers));
+    let user = {
+      clientId,
+      userId,
+    };
+    console.log('User: ' + JSON.stringify(user));
+    return { clientId, userId };
   },
 });
 let app = express();
@@ -89,8 +100,7 @@ server.applyMiddleware({ app });
 let port = process.env.PORT || 4000;
 
 async function mainAsync() {
-  // This `listen` method launches a web-server.  Existing apps
-  // can utilize middleware options, which we'll discuss later.
+  // This `listen` method launches a web-server.
   app.listen({ port }, () => {
     console.log(`👸 Princess Server ready at http://localhost:${port}`);
     console.log(`🗂️  GraphQL Server ready at http://localhost:${port}${server.graphqlPath}`);

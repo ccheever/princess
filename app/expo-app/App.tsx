@@ -1,12 +1,9 @@
-import ApolloClient, { gql } from 'apollo-boost';
+import gql from 'graphql-tag';
 import { ApolloProvider, useQuery } from '@apollo/react-hooks';
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { removeDirectivesFromDocument } from 'apollo-utilities';
 
-let ac = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
-});
+import apiClient from './PrincessApolloClient';
 
 let Hr = () => {
   return (
@@ -66,7 +63,7 @@ let Books = () => {
 
 export default function App() {
   return (
-    <ApolloProvider client={ac}>
+    <ApolloProvider client={apiClient}>
       <View style={styles.container}>
         <Text>Thank you Mario!</Text>
         <Text>But our princess is in another castle!</Text>
