@@ -9,7 +9,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TABLE "sessions" (
+CREATE TABLE "session" (
   "sessionId" text PRIMARY KEY,
   "clientId" text,
   "userId" text,
@@ -19,3 +19,11 @@ CREATE TABLE "sessions" (
   "createdTime" timestamptz default now(),
   "updatedTime" timestamptz default now()
 );
+
+CREATE TABLE "user" (
+  "userId" text PRIMARY KEY,
+  "name" text,
+  "username" text,
+  "createdTime" timestamptz default now(),
+  "updatedTime" timestamptz default now()
+)

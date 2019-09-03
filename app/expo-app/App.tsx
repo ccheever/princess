@@ -5,6 +5,13 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 
 import apiClient from './PrincessApolloClient';
 
+function getWindowId() {
+  if (!global.windowId) {
+    global.windowId = 'w:' + Math.random();
+  }
+  return global.windowId;
+}
+
 let Hr = () => {
   return (
     <View
@@ -71,6 +78,10 @@ export default function App() {
         <Text>This is an Apollo App too.</Text>
         <Hr />
         <Books />
+        <Hr />
+        <Text>window = {'' + window}</Text>
+        <Text>global = {'' + global}</Text>
+        <Text>windowId = {'' + getWindowId()}</Text>
       </View>
     </ApolloProvider>
   );
