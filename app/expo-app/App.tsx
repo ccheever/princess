@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 import { ApolloProvider, useQuery } from '@apollo/react-hooks';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 import apiClient from './PrincessApolloClient';
@@ -69,6 +69,13 @@ let Books = () => {
 };
 
 export default function App() {
+  let [clientId, setClientId] = useState(null);
+  
+  (async () => {
+    let _clientId = await apiClient.getClientIdAsync();
+    setClientId(_clientId);
+  })();
+
   return (
     <ApolloProvider client={apiClient}>
       <View style={styles.container}>
@@ -82,6 +89,7 @@ export default function App() {
         <Text>window = {'' + window}</Text>
         <Text>global = {'' + global}</Text>
         <Text>windowId = {'' + getWindowId()}</Text>
+        {clientId && <Text>clientId = {'' + clientId}</Text>}
       </View>
     </ApolloProvider>
   );
