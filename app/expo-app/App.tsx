@@ -4,13 +4,8 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 import apiClient from './PrincessApolloClient';
+import windowId from './window-id';
 
-function getWindowId() {
-  if (!global.windowId) {
-    global.windowId = 'w:' + Math.random();
-  }
-  return global.windowId;
-}
 
 let Hr = () => {
   return (
@@ -70,8 +65,9 @@ let Books = () => {
 
 export default function App() {
   let [clientId, setClientId] = useState(null);
-  
+
   (async () => {
+    // @ts-ignore
     let _clientId = await apiClient.getClientIdAsync();
     setClientId(_clientId);
   })();
@@ -88,7 +84,7 @@ export default function App() {
         <Hr />
         <Text>window = {'' + window}</Text>
         <Text>global = {'' + global}</Text>
-        <Text>windowId = {'' + getWindowId()}</Text>
+        <Text>windowId = {'' + windowId()}</Text>
         {clientId && <Text>clientId = {'' + clientId}</Text>}
       </View>
     </ApolloProvider>

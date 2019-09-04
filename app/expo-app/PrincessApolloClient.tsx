@@ -7,14 +7,18 @@ import { setContext } from 'apollo-link-context';
 import { createHttpLink } from 'apollo-link-http';
 import { AsyncStorage } from 'react-native';
 
+import makeRandomId from './make-random-id';
+
 let httpLink = createHttpLink({
-  uri: 'http://192.168.1.28:4000/graphql',
+  uri: `http://192.168.1.25:4000/graphql`,
 });
+
+global.__AsyncStorage = AsyncStorage;
 
 let getClientIdAsync = async () => {
   let clientId = await AsyncStorage.getItem('Princess-Client');
   if (!clientId) {
-    clientId = 'c:' + (Math.random() + '').substr(3);
+    clientId = 'c:' + makeRandomId();
     await AsyncStorage.setItem('Princess-Client', clientId);
   }
   return clientId;

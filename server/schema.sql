@@ -24,6 +24,10 @@ CREATE TABLE "user" (
   "userId" text PRIMARY KEY,
   "name" text,
   "username" text,
+  "email" text,
+  "emailIsConfirmed" boolean,
+  "mobile" text,
+  "mobileIsConfirmed" boolean,
   "createdTime" timestamptz default now(),
   "updatedTime" timestamptz default now()
 )
