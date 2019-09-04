@@ -6,8 +6,12 @@
   "repository": "https://github.com/ccheever/princess",
   "author": "Charlie Cheever <ccheever@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=10.2.0"
+  },
   "scripts": {
-    "start": "nodemon ."
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "devDependencies": {
     "nodemon": "^1.19.1",
