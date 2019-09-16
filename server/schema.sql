@@ -25,9 +25,9 @@ CREATE TABLE "user" (
   "name" text,
   "username" text,
   "email" text,
-  "emailIsConfirmed" boolean,
+  "emailIsConfirmed" boolean default false,
   "mobile" text,
-  "mobileIsConfirmed" boolean,
+  "mobileIsConfirmed" boolean default false,
   "createdTime" timestamptz default now(),
   "updatedTime" timestamptz default now()
 )
