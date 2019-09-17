@@ -8,9 +8,10 @@ import { createHttpLink } from 'apollo-link-http';
 import { AsyncStorage } from 'react-native';
 
 import makeRandomId from './make-random-id';
+import windowId from './window-id';
 
 let httpLink = createHttpLink({
-  uri: `http://192.168.1.11:4000/graphql`,
+  uri: `http://192.168.1.216:4000/graphql`,
 });
 
 global.__AsyncStorage = AsyncStorage;
@@ -33,6 +34,7 @@ let authLink = setContext(async (_, { headers }) => {
       'Princess-User': userId,
       'Princess-Client': clientId,
       'Princess-Agent': 'ApolloClient',
+      'Princess-Window': windowId(),
     },
   };
 });
