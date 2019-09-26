@@ -4,13 +4,14 @@ let express = require('express');
 let resolvers = require('./resolvers');
 let typeDefs = require('./typeDefs');
 
-
 // In the most basic sense, the ApolloServer can be started
 // by passing type definitions (typeDefs) and the resolvers
 // responsible for fetching the data for those types.
 let server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true,
+  playground: true,
   formatError: (error) => {
     console.error(error);
     return error;
