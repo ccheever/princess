@@ -7,8 +7,8 @@ import { setContext } from 'apollo-link-context';
 import { createHttpLink } from 'apollo-link-http';
 import { AsyncStorage } from 'react-native';
 
-import makeRandomId from './make-random-id';
-import windowId from './window-id';
+import makeRandomId from './makeRandomId';
+import windowId from './windowId';
 
 let httpLink = createHttpLink({
   uri: `http://192.168.1.216:4000/graphql`,

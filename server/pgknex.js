@@ -1,5 +1,5 @@
 let knex = require('knex');
-let privateSecretary = require('./private-secretary');
+let privateSecretary = require('./secrets');
 
 module.exports = knex({
   client: 'pg',

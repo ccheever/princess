@@ -1,5 +1,5 @@
 let twilite = require('twilite');
-let { twilio } = require('./private-secretary');
+let { twilio } = require('./secrets');
 
 module.exports = twilite(twilio);
 

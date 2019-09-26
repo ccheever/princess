@@ -4,8 +4,7 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 import apiClient from './PrincessApolloClient';
-import windowId from './window-id';
-
+import windowId from './windowId';
 
 let Hr = () => {
   return (

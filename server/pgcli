@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
-export PGHOST=`node -e "console.log(require('./private-secretary').postgres.host)"`
-export PGUSER=`node -e "console.log(require('./private-secretary').postgres.user)"`
-export PGDATABASE=`node -e "console.log(require('./private-secretary').postgres.database)"`
-export PGPASSWORD=`node -e "console.log(require('./private-secretary').postgres.password)"`
+export PGHOST=`node -e "console.log(require('./secrets').postgres.host)"`
+export PGUSER=`node -e "console.log(require('./secrets').postgres.user)"`
+export PGDATABASE=`node -e "console.log(require('./secrets').postgres.database)"`
+export PGPASSWORD=`node -e "console.log(require('./secrets').postgres.password)"`
 
 echo "// Princess Database"
 echo 'Type \dt to list tables, \d+ <table-name> to describe a table'

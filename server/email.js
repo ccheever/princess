@@ -1,6 +1,6 @@
 let sendgridMail = require('@sendgrid/mail');
 
-let privateSecretary = require('./private-secretary');
+let privateSecretary = require('./secrets');
 
 sendgridMail.setApiKey(privateSecretary.sendgrid.apiKey);
 

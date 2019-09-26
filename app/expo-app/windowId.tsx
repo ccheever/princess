@@ -1,4 +1,4 @@
-import makeRandomId from './make-random-id';
+import makeRandomId from './makeRandomId';
 
 export default () => {
   if (!(global as any).$$__PrincessWindowId__$$) {

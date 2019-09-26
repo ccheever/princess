@@ -16,6 +16,10 @@ let typeDefs = gql`
   type Query {
     books: [Book]
   }
+
+  type Mutation {
+    startLogin: Int
+  }
 `;
 
 module.exports = typeDefs;

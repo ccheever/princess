@@ -7,12 +7,12 @@
   "author": "Charlie Cheever <ccheever@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=10.2.0"
+    "node": ">=12.9.1"
   },
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "sqlweb": "npx franchise-client@0.2.7"
+    "sqlweb": "cat private-secretary.js; echo https://franchise.cloud/app/; npx franchise-client@0.2.7"
   },
   "devDependencies": {
     "nodemon": "^1.19.1",
@@ -23,8 +23,10 @@
     "apollo-server-express": "^2.9.2",
     "express": "^4.17.1",
     "graphql": "^14.5.4",
+    "isemail": "^3.2.0",
     "knex": "^0.19.3",
     "pg": "^7.12.1",
+    "phone": "^2.3.21",
     "twilite": "^1.1.5"
   }
 }
